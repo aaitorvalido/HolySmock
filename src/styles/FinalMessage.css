@@ -1,0 +1,173 @@
+.final-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--ink-950, #0b0f0d);
+  color: var(--paper, #f2ece0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.final-content {
+  max-width: 860px;
+  width: 100%;
+}
+
+.final-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+}
+
+.final-rule {
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent, #c1622b);
+  margin-bottom: 1.5rem;
+}
+
+.final-lede {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--paper-dim, #c6bfae);
+  margin-bottom: 4rem;
+  max-width: 65ch;
+}
+
+.stats-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.stats-text {
+  flex: 1.5;
+  min-width: 280px;
+}
+
+.stats-text h3 {
+  font-size: 1.6rem;
+  font-family: 'Fraunces', Georgia, serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.stats-text p {
+  color: var(--paper-dim, #c6bfae);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.benefits-section, .tips-section {
+  margin-bottom: 5rem;
+}
+
+.benefits-section h2, .tips-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+}
+
+.tips-intro {
+  color: var(--paper-dim, #c6bfae);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card, .tip-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.8rem;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.benefit-card:hover, .tip-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-wrap {
+  width: 42px;
+  height: 42px;
+  color: var(--accent, #c1622b);
+  margin-bottom: 1rem;
+}
+
+.icon-wrap.sm {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.benefit-card h3, .tip-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.benefit-card p, .tip-card p {
+  margin: 0;
+  color: var(--paper-dim, #c6bfae);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* FOOTER */
+.final-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.restart-btn {
+  background-color: var(--accent, #c1622b);
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.restart-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

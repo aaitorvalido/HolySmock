@@ -1,0 +1,54 @@
+/* src/styles/WelcomeScreen.css */
+.welcome-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.spline-container {
+  width: 100%;
+  height: 100%;
+}
+
+.start-button-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center; 
+  padding-bottom: 40px; 
+  box-sizing: border-box;
+  z-index: 10;
+  pointer-events: none; 
+}
+
+
+.start-btn {
+  pointer-events: auto; 
+  cursor: pointer;
+  font-size: 40px;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 500px;
+  height: 100px;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  text-shadow: 
+    0 0 4px #fff, 
+    0 0 3px #c44f4f,
+    0 0 12px #c44f4f,
+    0 0 27px #c44f4f, 
+    0 0 48px #c44f4f,
+    0 0 75px #c44f4f;
+    
+  transition: transform 0.2s ease;
+}
+
+.start-btn:hover {
+  transform: scale(1.02);
+}

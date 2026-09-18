@@ -1,0 +1,181 @@
+
+.cigarette-pack {
+  width: 100%;
+  aspect-ratio: 1 / 1.4; 
+  perspective: 1200px; 
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  position: relative;
+  max-width: 320px;
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.95), 
+    0 20px 40px rgba(0, 0, 0, 0.6);         
+}
+
+
+.pack-inside {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 160px; 
+  background: linear-gradient(to bottom, #111111 0%, #333333 100%);
+  border-radius: 6px 6px 0 0;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.8);
+  z-index: 1; 
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: flex-end;
+  padding: 0 6px 20px 6px; 
+  box-sizing: border-box;
+}
+
+/* Los cigarros */
+.cig {
+  width: 22px;
+  height: 130px; 
+  background: linear-gradient(to bottom,
+    #e69a4e 0%,    
+    #c86124 25px,   
+    #ffffff 26px,   
+    #e5e7eb 100%
+  );
+  border-radius: 2px;
+  box-shadow: 
+    inset -2px 0 4px rgba(0,0,0,0.2), 
+    inset 2px 0 4px rgba(255,255,255,0.8),
+    2px 4px 6px rgba(0,0,0,0.5);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: translateY(120px); 
+}
+
+
+.pack-lid {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 90px;
+  padding: 1.5rem 1rem 1rem 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 4; 
+  transform-origin: top center;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(to right, #d1d5db 0%, #ffffff 12%, #ffffff 88%, #9ca3af 100%);
+  border-radius: 6px 6px 0 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    inset 2px 0 4px rgba(255,255,255,0.8), 
+    inset -2px 0 4px rgba(0,0,0,0.2), 
+    0 4px 6px -3px rgba(0,0,0,0.4);
+}
+
+.pack-brand {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0;
+  color: #dc2626; 
+  font-family: 'Georgia', serif; 
+  letter-spacing: 2px;
+}
+
+
+.pack-body {
+  margin-top: 90px; 
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5; 
+  background: linear-gradient(to right, #d1d5db 0%, #ffffff 12%, #ffffff 88%, #9ca3af 100%);
+  border-radius: 0 0 6px 6px;
+  box-shadow: inset 2px 0 4px rgba(255,255,255,0.8), inset -2px 0 4px rgba(0,0,0,0.2);
+}
+
+/* --- ANIMACIONES DE APERTURA --- */
+.cigarette-pack.is-open .pack-lid { transform: rotateX(110deg); }
+.cigarette-pack.is-open .cig { transform: translateY(0px); }
+.cigarette-pack.is-open .cig:nth-child(1) { transform: translateY(10px); transition-delay: 0.05s; }
+.cigarette-pack.is-open .cig:nth-child(2) { transform: translateY(-5px); transition-delay: 0.15s; }
+.cigarette-pack.is-open .cig:nth-child(3) { transform: translateY(15px); transition-delay: 0.1s; }
+.cigarette-pack.is-open .cig:nth-child(4) { transform: translateY(5px); transition-delay: 0.25s; }
+.cigarette-pack.is-open .cig:nth-child(5) { transform: translateY(-2px); transition-delay: 0.05s; }
+.cigarette-pack.is-open .cig:nth-child(6) { transform: translateY(12px); transition-delay: 0.2s; }
+.cigarette-pack.is-open .cig:nth-child(7) { transform: translateY(8px); transition-delay: 0.1s; }
+.cigarette-pack.is-open .cig:nth-child(8) { transform: translateY(20px); transition-delay: 0.15s; }
+
+/* --- CONTROLES Y ADVERTENCIA --- */
+.pack-warning {
+  border: 4px solid #000000;
+  background-color: #ffffff;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+.pack-warning .step-label {
+  color: #000000; 
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.4;
+  display: block;
+  width: 100%;
+}
+
+.pack-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pack-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid #9ca3af;
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.pack-input:focus {
+  border-color: #000000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.pack-button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  background-color: #4b5563; 
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.pack-button:hover:not(:disabled) { background-color: #1f2937; }
+.pack-button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.pack-svg-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50px; 
+  height: auto;
+}
+

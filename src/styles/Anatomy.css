@@ -1,0 +1,127 @@
+/* src/styles/Anatomy.css */
+:root {
+  --ink-950: #0b0f0d;
+  --paper: #f2ece0;
+  --paper-dim: #c6bfae;
+  --smoke: #6d685c;
+  --accent: #c1622b;
+  --skin-color: #9fb5c7;
+  --organ-color: #2f6a86;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.anatomy-wrapper {
+  background: var(--ink-950);
+  color: var(--paper);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  /* BÓRRALE EL overflow-x: hidden; QUE ESTABA AQUÍ */
+  text-align: left;
+}
+
+.anatomy-wrapper ::selection {
+  background: var(--accent);
+  color: var(--ink-950);
+}
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8vh 8vw;
+  max-width: 640px;
+}
+
+.intro .kicker { font-size: .95rem; color: var(--paper-dim); max-width: 34ch; margin: 0 0 1.4rem; line-height: 1.5; }
+.intro h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5.2vw, 4rem); line-height: 1.05; margin: 0 0 1.6rem; max-width: 15ch; letter-spacing: -.01em; }
+.intro .lede { font-size: 1.02rem; line-height: 1.7; max-width: 44ch; color: var(--paper-dim); }
+.intro .scroll-hint { display: flex; align-items: center; gap: .6rem; font-size: .85rem; color: var(--paper-dim); margin-top: 3rem; }
+.scroll-hint .stem { width: 1px; height: 34px; background: linear-gradient(var(--paper-dim), transparent); }
+
+/* AQUÍ ESTÁ LA MAGIA DE LAS 2 COLUMNAS */
+.stage { 
+  display: grid; 
+  grid-template-columns: minmax(240px, 36%) 1fr; 
+  align-items: start; 
+}
+
+/* COLUMNA IZQUIERDA (El cuerpo fijo) */
+.figure-col {
+  position: sticky; 
+  top: 0; 
+  height: 100vh;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  padding: 4vh 2vw;
+}
+
+.figure-wrap { 
+  width: 100%; 
+  max-width: 340px; /* Esto evita que se haga gigante */
+}
+
+.figure-wrap svg { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  overflow: visible; 
+}
+
+/* COLUMNA DERECHA (Los textos que scrollean) */
+.content-col { padding: 0 8vw 0 6vw; }
+
+.organ-section {
+  min-height: 92vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  padding: 6vh 0; 
+  max-width: 52ch;
+  opacity: .22; 
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.organ-section.in-view { opacity: 1; transform: translateY(0); }
+.organ-section .eyebrow { font-size: .85rem; color: var(--accent); margin: 0 0 .8rem; transition: color .3s ease; }
+.organ-section .rule { width: 38px; height: 2px; background: var(--accent); margin-bottom: 1.3rem; transition: background .3s ease; }
+.organ-section h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.14; margin: 0 0 1.1rem; }
+.organ-section p { font-size: 1rem; line-height: 1.75; color: var(--paper-dim); margin: 0 0 .9rem; }
+.organ-section p:last-child { margin-bottom: 0; }
+
+.timeline-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8vh 0; max-width: 56ch; }
+.timeline-section .eyebrow { font-size: .85rem; color: var(--accent); margin-bottom: .6rem; transition: color .3s ease; }
+.timeline-section h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.7rem, 3.4vw, 2.6rem); margin: 0 0 2rem; max-width: 16ch; }
+.tl-item { display: grid; grid-template-columns: 6.2rem 1fr; gap: 1.3rem; padding: 1rem 0; border-top: 1px solid rgba(242, 236, 224, .16); opacity: .3; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+.tl-item.in-view { opacity: 1; transform: translateY(0); }
+.tl-item:last-child { border-bottom: 1px solid rgba(242, 236, 224, .16); }
+.tl-item .tl-time { font-family: var(--serif); font-size: 1.05rem; color: var(--accent); transition: color .3s ease; }
+.tl-item p { margin: 0; line-height: 1.6; color: var(--paper-dim); font-size: .96rem; }
+
+.cta-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; max-width: 600px; padding: 8vh 0 14vh; }
+.cta-section h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.1; margin: 0 0 1.3rem; }
+.cta-section p { font-size: 1.02rem; line-height: 1.75; color: var(--paper-dim); margin: 0 0 1rem; max-width: 44ch; }
+.cta-list { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-direction: column; gap: .7rem; }
+.cta-list li { padding-left: 1.4rem; position: relative; line-height: 1.6; font-size: .96rem; }
+.cta-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); transition: background .3s ease; }
+
+.anatomy-wrapper footer { padding: 4vh 8vw 6vh; font-size: .8rem; color: var(--smoke); max-width: 56ch; line-height: 1.6; }
+
+.rail { position: fixed; right: 2rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: .5rem; z-index: 5; }
+.rail span { width: 6px; height: 6px; border-radius: 50%; background: rgba(242, 236, 224, .18); transition: background .3s ease, transform .3s ease; }
+.rail span.active { background: var(--accent); transform: scale(1.6); }
+
+/* DISEÑO PARA MÓVILES O PANTALLAS DIVIDIDAS (AQUÍ ES DONDE PASA A 1 COLUMNA) */
+@media (max-width: 860px) {
+  .stage { grid-template-columns: 1fr; }
+  .figure-col { position: sticky; top: 0; height: 40vh; padding: 2vh 0 1vh; background: linear-gradient(180deg, var(--ink-950) 78%, transparent); z-index: 2; }
+  .figure-wrap { max-width: 190px; }
+  .content-col { padding: 0 7vw; }
+  .organ-section { min-height: auto; padding: 5vh 0 6vh; }
+  .rail { display: none; }
+  .intro { padding: 10vh 7vw; }
+}
