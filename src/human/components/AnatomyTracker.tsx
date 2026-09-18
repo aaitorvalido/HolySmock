@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import '../../styles/Anatomy.css';
 
 import { ORGAN_SECTIONS, TIMELINE, ZOOMS, DAMAGE, HEALTH } from '../data/anatomyData';
